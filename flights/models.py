@@ -8,4 +8,7 @@ class Flight(models.Model):
     #   55;03
 
     # have to get to know how oto add the destination after migrate the file fo the destination 
-    # it would be, can i migrate after migrate and just change the 1 line and mighrate again 
+    # it would be, can i migrate after migrate and just change the 1 line and mighrate again   
+
+    def __str__(self):
+        return f"{self.id}:{self.origin} to {self.destination}"
