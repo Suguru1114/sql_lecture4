@@ -10,9 +10,9 @@ class Airport(models.Model):
         return f"{self.id}:{self.origin} to {self.destination}"
 
 class Flight(models.Model):
-    origin = models.CharField(max_length=64)
+    origin = models.ForeignKey(Airport, on_delete=models.CASCADE)
     destination = models.CharField(max_length=100, default='Default Destination')
-    duration = models.IntegerField()
+    duration = models.IntegerField() 
     #   55;03
 
     # have to get to know how oto add the destination after migrate the file fo the destination 
