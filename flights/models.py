@@ -10,8 +10,8 @@ class Airport(models.Model):
         return f"{self.id}:{self.origin} to {self.destination}"
 
 class Flight(models.Model):
-    origin = models.ForeignKey(Airport, on_delete=models.CASCADE)
-    destination = models.CharField(max_length=100, default='Default Destination')
+    origin = models.ForeignKey(Airport, on_delete=models.CASCADE, related_name="deprtures")
+    destination = models.ForeignKey(Airport,on_delete=models.CASCADE, related_name="arrivals")
     duration = models.IntegerField() 
     #   55;03
 
