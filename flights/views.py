@@ -16,3 +16,9 @@ def flight(request, flight_id):
         "passengers": flight.passengers.all()
 
     })
+
+def book(request, flight_id):
+    if request.method == "post":
+        flight = Flight.objects.get(pk=flight_id)
+        passenger = Passenger.objects.get(pk=int(request.POST["passsenger"]))
+
