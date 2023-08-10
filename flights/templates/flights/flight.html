@@ -14,10 +14,11 @@
 
     <ul>
         {% for passenger in passengers %}
-            <li>{{ passenger.name }}></li>
+            <li>{{ passenger }}</li>
         {% empty %}
             <li>No passengers.</li>
         {% endfor %}
-
     </ul>
+
+    <a href="{% url 'index' %}">Back to Flight List</a>
 {% endblock %}
