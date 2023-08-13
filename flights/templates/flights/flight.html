@@ -12,7 +12,16 @@
 
     <h2>Add Passenger</h2>
 
-    <from action="{% url 'book' flight.id %}" method="post" >
+    <form action="{% url 'book' flight.id %}" method="post" >
+        {% csrf_token %}
+        <select name="passenger">  
+            <!-- select field for adding items -->
+           {% for passenger in non_passengers %}
+                <option value="{{ passenger.id }}">{{ passenger }}</option>
+           {% endfor %}
+        </select>
+        <input type="submit">
+    </form>
 
     <ul>
         {% for passenger in passengers %}
